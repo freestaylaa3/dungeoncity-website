@@ -1,0 +1,56 @@
+<div class="container p-5">
+  <h1 [@flyFromRight]="'right'" class="page-head">
+    <img  src="https://img.icons8.com/external-prettycons-solid-prettycons/60/000000/external-chest-games-prettycons-solid-prettycons.png"/>
+    Eşyalar</h1>
+  <div [@flyFromRight2]="'right2'" class="d-flex justify-content-evenly mb-4">
+    <button class="btn shadow-lg" >
+      <img (click)="getHandItems()" src="https://img.icons8.com/ios-filled/50/000000/sword.png" />
+    </button>
+    <button class="btn shadow-lg">
+      <img
+        (click)="getHeadItems()"  
+        src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/60/000000/external-viking-helmet-museum-vitaliy-gorbachev-fill-vitaly-gorbachev.png"
+      />
+    </button>
+    <button class="btn shadow-lg">
+      <img (click)="getBodyItems()"
+        src="https://img.icons8.com/glyph-neue/60/000000/armored-breastplate.png"
+      />
+    </button>
+    <button class="btn shadow-lg">
+      <img (click)="getFeetItems()" src="https://img.icons8.com/ios-filled/50/000000/swollen-feet.png" />
+    </button>
+  </div>
+  <div class="row">
+    <div *ngFor="let item of items" class="col-md-6">
+      <div [@flyInOut]="'down'" class="card mb-3 shadow-lg" style="max-width: 540px">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fsimilarpng.com%2Fsword-isolated-on-transparent-background-png%2F&psig=AOvVaw06eTEtjG96F4ZUJTP5svHC&ust=1640560132908000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJDfnPSIgPUCFQAAAAAdAAAAABAD" class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"> <strong>{{ item.itemName }}</strong></h5>
+              <p class="card-text">
+                <small class="text-muted">{{ item.itemType.itemTypeName }}</small>
+              </p>
+              <p class="card-text">{{ item.itemDescription }}</p>
+              <div class="row">
+                <div class="col" style="color: blue">
+                  <strong style="color: black">Fiziksel Hasar:</strong>
+                  {{ item.basePhysical }}
+                </div>
+                <div class="col" style="color: rebeccapurple">
+                  <strong style="color: black">Büyü Hasarı:</strong>
+                  {{ item.baseMagical }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+

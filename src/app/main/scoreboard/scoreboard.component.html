@@ -1,0 +1,26 @@
+<div class="container p-5">
+  
+  <h1 [@flyFromRight]="'right'" class="page-head shadow-sm">
+    <img src="https://img.icons8.com/ios-filled/50/000000/medal.png"/>
+    Liderlik Tablosu
+  </h1>
+
+  <ul [@flyInOut]="'down'" class="list-group list-group-flush shadow-lg mx-5">
+    <li class="list-group-item bg-dark">
+      <div class="scoreboard-header row">
+        <div class="col-2 col-sm-2 col-md-2">Kademe</div>
+        <div class="col-2 col-sm-2 col-md-2">Deneyim Puanı</div>
+        <div class="col-6 col-sm-6 col-md-6">Kullanıcı Adı</div>
+        <div class="col-2 col-sm-2 col-md-2">Seviye</div>
+      </div>
+    </li>
+    <li *ngFor="let user of users; let index = index" class="list-group-item py-4">
+      <div class="scoreboard row">
+        <div style="font-size: xx -large;" class="col-2 col-sm-2 col-md-2">{{ index + 1 }}</div>
+        <div class="col-2 col-sm-2 col-md-2">{{ user.userExp }}</div>
+        <div class="col-6 col-sm-6 col-md-6">{{ user.userName }}</div>
+        <div class="col-2 col-sm-2 col-md-2">{{ user.userLevel }}</div>
+      </div>
+    </li>
+  </ul>
+</div>

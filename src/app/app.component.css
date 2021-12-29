@@ -1,0 +1,7 @@
+.footer{
+    /* background-color: rgb(199, 199, 199) !important; */
+    border-top: solid rgba(0, 0, 0, 0.24) 1px !important;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

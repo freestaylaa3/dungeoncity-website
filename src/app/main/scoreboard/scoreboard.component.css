@@ -1,0 +1,33 @@
+tr{
+    border-color: black;
+}
+
+.scoreboard>div{
+    font-size: x-large;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    border-right: 1px solid rgba(0,0,0,.125);
+}
+.scoreboard>div:last-child{
+    
+    border-right: none
+}
+
+.scoreboard-header>div{
+    text-align: center;
+    color: #fff;
+}
+
+.page-head{
+    margin-bottom:2%;
+    border-bottom:solid rgb(58, 59, 1) 2px  ;
+    padding: 1%;
+}
+
+.list-group-item{
+    background-color: rgba(175, 175, 175, 0.637);
+}
+.container{
+    min-height: 50rem;
+}

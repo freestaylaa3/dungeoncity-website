@@ -1,0 +1,213 @@
+<ul
+  class="nav bg-dark justify-content-center p-3 nav-fill mt-1"
+>
+  <li class="nav-item">
+    <button
+      data-bs-toggle="modal"
+      data-bs-target="#addItemModal"
+      class="btn btn-success shadow-lg"
+    >
+      Item Ekle
+    </button>
+  </li>
+  <li class="nav-item">
+    <a class="btn btn-dark shadow-lg">Item İşlemleri</a>
+  </li>
+</ul>
+<table id="itemTable" class="mt-1 table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Eşya Id</th>
+      <th scope="col">Eşya Adı</th>
+      <th scope="col">Eşya Tipi</th>
+      <th scope="col">Eşya Değeri</th>
+      <th scope="col">Eşya Enderliği</th>
+      <th scope="col">İşlemler</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items" [attr.id]="item.itemId">
+      <th scope="row">{{ item.itemId }}</th>
+      <td>{{ item.itemName }}</td>
+      <td>{{ item.itemType.itemTypeName }}</td>
+      <td>{{ item.itemPrice }}</td>
+      <td>{{ item.itemRarity }}</td>
+      <td>
+        <button 
+        data-bs-toggle="modal"
+        data-bs-target="#editItemModal" 
+        (mouseover)="loadEditItem(item.itemId)" style="margin-right: 3%" class="btn btn-warning">Edit</button>
+        <button (click)="deleteItem(item.itemId)" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- MODALS -->
+<!-- İtem Ekleme Modal -->
+<div
+  class="modal fade"
+  id="addItemModal"
+  aria-hidden="true"
+  aria-labelledby="exampleModalToggleLabel"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">Eşya Ekleme</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+          <div class="col-9">
+            <form [formGroup]="addItemForm" (ngSubmit)="addItem()">
+              <div class="row">
+                <div class="mb-3">
+                  <label for="itemName" class="form-label" name="itemName"
+                    >Eşya Adı</label
+                  >
+                  <input type="text" class="form-control" id="itemName" formControlName="itemName"/>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="itemTypeId" class="form-label" name="itemTypeId"
+                    >Eşya Tipi</label
+                  >
+                  <input type="text" class="form-control" id="itemTypeId" formControlName="itemTypeId"/>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="itemDescription" class="form-label" name="itemDescription"
+                    >Eşya Açıklaması</label
+                  >
+                <textarea type="text" class="form-control" id="itemDescription" formControlName="itemDescription"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="itemPrice" class="form-label" name="itemPrice"
+                  >Eşya Değeri</label
+                >
+                <input type="text" class="form-control" id="itemPrice" formControlName="itemPrice"/>
+              </div>
+              <div class="mb-3">
+                <label for="itemRarity" class="form-label" name="itemRarity"
+                  >Eşya Enderliği</label
+                >
+                <input type="text" class="form-control" id="itemRarity" formControlName="itemRarity"/>
+              </div>
+              
+              <div class="mb-3">
+                <label for="basePhysical" class="form-label" name="basePhysical"
+                  >Fiziksel Hasarı</label
+                >
+                <input type="text" class="form-control" id="basePhysical" formControlName="basePhysical"/>
+              </div>
+              <div class="mb-3">
+                <label for="baseMagical" class="form-label" name="baseMagical"
+                  >Büyü Hasarı</label
+                >
+                <input type="text" class="form-control" id="baseMagical" formControlName="baseMagical"/>
+              </div>
+              <button data-bs-dismiss="modal" type="submit" [disabled]='!addItemForm.valid' class="btn btn-success">Eşya Ekle</button>
+            </form>
+          </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button
+          class="btn btn-success"
+          data-bs-target="#exampleModalToggle2"
+          data-bs-toggle="modal"
+        >
+          Eşyayı Ekle
+        </button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<!-- editItemModal -->
+<div
+  class="modal fade"
+  id="editItemModal"
+  aria-hidden="true"
+  aria-labelledby="exampleModalToggleLabel"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">Eşya Ekleme</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+          <div class="col-9">
+            <form [formGroup]="editItemForm">
+              <div class="row">
+                <div class="mb-3">
+                  <label for="itemId" class="form-label" name="itemId"
+                    >Eşya Id</label
+                  >
+                  <input #itemId type="number" class="form-control" id="itemId" formControlName="itemId"/>
+                </div>
+                <div class="mb-3">
+                  <label  for="itemName" class="form-label" name="itemName"
+                    >Eşya Adı</label
+                  >
+                  <input type="text" class="form-control" id="itemName" formControlName="itemName"/>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="itemTypeId" class="form-label" name="itemTypeId"
+                    >Eşya Tipi</label
+                  >
+                  <input type="text" class="form-control" id="itemTypeId" formControlName="itemTypeId"/>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="itemDescription" class="form-label" name="itemDescription"
+                    >Eşya Açıklaması</label
+                  >
+                <textarea type="text" class="form-control" id="itemDescription" formControlName="itemDescription"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="itemPrice" class="form-label" name="itemPrice"
+                  >Eşya Değeri</label
+                >
+                <input type="text" class="form-control" id="itemPrice" formControlName="itemPrice"/>
+              </div>
+              <div class="mb-3">
+                <label for="itemRarity" class="form-label" name="itemRarity"
+                  >Eşya Enderliği</label
+                >
+                <input type="text" class="form-control" id="itemRarity" formControlName="itemRarity"/>
+              </div>
+              
+              <div class="mb-3">
+                <label for="basePhysical" class="form-label" name="basePhysical"
+                  >Fiziksel Hasarı</label
+                >
+                <input type="text" class="form-control" id="basePhysical" formControlName="basePhysical"/>
+              </div>
+              <div class="mb-3">
+                <label for="baseMagical" class="form-label" name="baseMagical"
+                  >Büyü Hasarı</label
+                >
+                <input type="text" class="form-control" id="baseMagical" formControlName="baseMagical"/>
+              </div>
+              <button data-bs-dismiss="modal" (click)="editItem(itemId.value)" type="submit" [disabled]='!editItemForm.valid' class="btn btn-success editRefresh">Eşya Ekle</button>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+

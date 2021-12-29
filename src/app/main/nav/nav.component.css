@@ -1,0 +1,14 @@
+/* .navbar {
+  opacity: 0.9;
+} */
+.basla {
+  background-color: rgb(131, 18, 14);
+}
+.basla:hover {
+  background-color: rgb(175, 30, 25);
+}
+.modal-content{
+    border-radius: 0% !important;
+    background-color: black;
+    color: #fff;
+}

@@ -1,0 +1,92 @@
+<div class="container p-5">
+  <h1 class="page-head shadow">Kayıt Ol</h1>
+
+  <div class="col-4">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <div class="mb-3">
+        <label for="userName" class="form-label" name="userName"
+          >Kullanıcı Adı</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="userName"
+          formControlName="userName"
+          name="userName"
+          [ngClass]="{ 'is-invalid': submitted && f.userName.errors }"
+        />
+        <span
+          style="color: rgb(170, 73, 73)"
+          *ngIf="registerForm.controls['userName'].touched && f.userName.errors"
+          >Kullanıcı adı en az 3 karakter içermelidir.</span
+        >
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Adresi</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+          aria-describedby="emailHelp"
+          name="email"
+          [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+        />
+        <span
+          style="color: rgb(170, 73, 73)"
+          *ngIf="
+            registerForm.controls['email'].touched &&
+            registerForm.controls['email'].invalid
+          "
+          >Geçerli bir email giriniz.</span
+        >
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Şifre</label>
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+          [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+        />
+        <span
+          style="color: rgb(170, 73, 73)"
+          *ngIf="
+            registerForm.controls['password'].touched &&
+            registerForm.controls['password'].invalid
+          "
+          >Şifre en az 6 karakter içermelidir.</span
+        >
+      </div>
+      <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Şifre Doğrulama</label>
+        <input
+          type="password"
+          class="form-control"
+          id="confirmPassword"
+          name="confirmPassword"
+          formControlName="confirmPassword"
+          [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"
+        />
+
+        <span
+          style="color: rgb(170, 73, 73)"
+          *ngIf="
+            registerForm.controls['confirmPassword'].touched &&
+            registerForm.controls['confirmPassword'].invalid
+          "
+          >Şifreler aynı olmalıdır.</span
+        >
+      </div>
+      <button
+        type="submit"
+        [disabled]="!registerForm.valid"
+        class="btn btn-primary"
+      >
+        Kayıt Ol
+      </button>
+    </form>
+  </div>
+</div>

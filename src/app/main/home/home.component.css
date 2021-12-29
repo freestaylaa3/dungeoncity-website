@@ -1,0 +1,13 @@
+.home{
+    height: 100%;
+    width: 100%;
+    /* background-image: linear-gradient(rgb(199, 199, 199),rgb(248, 248, 248)) !important; */
+    background-color: rgb(199, 199, 199) !important;
+    background-image: linear-gradient(
+   to bottom, 
+   rgba(199,199,199,1) 0%,
+   rgba(199,199,199,1) 25%,
+   rgba(199,199,199,0) 100%
+),url(https://pxwall.com/wp-content/uploads/2018/06/Wallpaper%20Dark%20Souls,%20fan%20art,%20warrior,%205K,%20Art%204424916138.jpg);
+background-size: auto;
+}

@@ -1,0 +1,23 @@
+.page-head{
+    margin-bottom:2%;
+    border-bottom:solid rgb(58, 59, 1) 2px  ;
+    padding: 1%;
+}
+.card{
+    background-color: rgb(175, 175, 175);
+    border: 0;
+}
+.container{
+    min-height: 50rem;
+}
+
+button{
+    background-color: rgb(175, 175, 175);
+    border: 0;
+}
+button:hover{
+    background-color: rgb(129, 129, 129);
+}
+/* button:enabled{
+    background-color: rgb(175, 175, 175);
+} */

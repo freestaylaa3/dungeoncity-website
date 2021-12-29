@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+
+@font-face {
+  font-family: Bebas;
+  src: './assets/fonts/Bebas/BebasNeue-Regular.ttf';
+}
+*{
+  font-family: Bebas;
+}
+
+body{
+  /* background-image: url(https://images.hdqwalls.com/wallpapers/medieval-queen-p4.jpg); */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100%;
+  color: rgb(41, 41, 41);
+}
+
+.page-head{
+  margin-bottom:2%;
+  border-bottom:solid rgb(58, 59, 1) 2px  ;
+  border-left: solid rgb(58, 59, 1) 2px ;
+  padding: 1%;
+}
+
+.form-control{
+  border-radius: 0;
+  /* border: solid 1px #424b55; */
+}
+.form-control::selection{
+  border:solid rgba(255, 255, 255, 0) 1ch;
+}
+.border-bottom{
+  border-bottom: solid rgba(0, 0, 0, 0.24) 1px !important;
+}
+.border-left{
+  border-left: solid rgba(0, 0, 0, 0.24) 1px !important;
+}
