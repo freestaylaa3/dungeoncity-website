@@ -44,7 +44,6 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li><a class="dropdown-item" href="#">Profilim</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
               <li *ngIf="isAdmin"><a class="dropdown-item" [routerLink]="['/admin']" routerLinkActive="router-link-active"  href="#">Admin Paneli</a></li>
               <li><a class="dropdown-item" (click)="logOut()" href="#">Çıkış Yap</a></li>
             </ul>
