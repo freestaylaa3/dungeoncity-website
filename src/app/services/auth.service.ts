@@ -10,7 +10,7 @@ import { RegisterUser } from '../models/registerUser';
 })
 export class AuthService {
   constructor(private httpClient: HttpClient, private router: Router) {}
-  path = 'https://localhost:44327/api/Auth/';
+  path = 'https://dungeoncity-webapi.herokuapp.com/api/Auth/';
   userToken: any;
   decodedToken: any;
   jwtHelper: JwtHelperService = new JwtHelperService();

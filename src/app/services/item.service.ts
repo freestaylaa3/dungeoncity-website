@@ -9,7 +9,7 @@ import { Item } from '../models/item';
 export class ItemService {
 
   constructor(private httpClient:HttpClient) { }
-  path = "https://localhost:44327/api/Item/";
+  path = "https://dungeoncity-webapi.herokuapp.com/api/Item/";
   
   getItems():Observable<Item[]>{
     return this.httpClient.get<Item[]>(this.path+"get-items")

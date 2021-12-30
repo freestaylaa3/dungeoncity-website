@@ -9,7 +9,7 @@ import { User } from '../models/user';
 export class UserService {
 
   constructor(private httpClient:HttpClient) { }
-  path = "https://localhost:44327/api/User/"
+  path = "https://dungeoncity-webapi.herokuapp.com/api/User/"
 
   getUsers():Observable<User[]>{
     return this.httpClient.get<User[]>(this.path+"get-users")
