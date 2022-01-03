@@ -4,12 +4,13 @@ import { LoginUser } from '../models/loginUser';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { RegisterUser } from '../models/registerUser';
+import { AlertifyService } from './alertify.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  constructor(private httpClient: HttpClient, private router: Router,private alert: AlertifyService) {}
   path = 'https://dungeoncity-webapi.herokuapp.com/api/Auth/';
   userToken: any;
   decodedToken: any;
@@ -37,9 +38,14 @@ export class AuthService {
     this.httpClient
       .post(this.path + 'register', registerUser, { headers: headers })
       .subscribe((data) => {
+        
         this.router.navigateByUrl('').then(()=>{
           window.location.reload();
-        });
+          this.alert.success("kayıt işlemi başarılı.")
+        },(error)=>{
+          this.alert.error(`${error}`);
+        }
+        );
       });
   }
   saveToken(token) {

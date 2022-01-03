@@ -31,3 +31,9 @@ tr{
 .container{
     min-height: 50rem;
 }
+
+@media screen and (max-width: 767px){
+    .row{
+        font-size: small;
+    }
+}

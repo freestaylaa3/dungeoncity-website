@@ -1,10 +1,10 @@
-<ul
+<!-- <ul
   class="nav bg-dark justify-content-center p-3 nav-fill mt-1"
 >
   <li class="nav-item">
     <a class="btn btn-dark shadow-lg">Item İşlemleri</a>
   </li>
-</ul>
+</ul> -->
 <table id="userTable" class="mt-1 table table-striped table-dark">
     <thead>
       <tr>
@@ -13,7 +13,7 @@
         <th scope="col"> Email</th>
         <th scope="col"> Level</th>
         <th scope="col"> Deneyim Puanı</th>
-        <th scope="col">İşlemler</th>
+        <th scope="col"> İşlemler</th>
       </tr>
     </thead>
     <tbody>
@@ -28,8 +28,8 @@
           data-bs-toggle="modal"
           data-bs-target="#editUserModal" 
           (mouseover)="loadUserDetails(user.userId)"
-          style="margin-right: 3%" class="btn btn-warning">Edit</button>
-          <button (click)="deleteUser(user.userId)" class="btn btn-danger">Delete</button>
+          style="margin-right: 3%" class="btn btn-warning">Güncelle</button>
+          <button (click)="deleteUser(user.userId)" class="btn btn-danger">Sil</button>
         </td>
       </tr>
     </tbody>
@@ -46,7 +46,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel">Eşya Ekleme</h5>
+        <h5 class="modal-title" id="exampleModalToggleLabel">Kullanıcı Güncelleme</h5>
         <button
           type="button"
           class="btn-close"
@@ -109,7 +109,7 @@
                 >
                 <input type="text" class="form-control" id="money" formControlName="money"/>
               </div>
-              <button data-bs-dismiss="modal" (click)="detailUser(userId.value)"  type="submit" class="btn btn-success">Eşya Ekle</button>
+              <button data-bs-dismiss="modal" (click)="detailUser(userId.value)"  type="submit" class="btn btn-success">Kullanıcıyı Güncelle</button>
             </form>
           </div>
       </div>

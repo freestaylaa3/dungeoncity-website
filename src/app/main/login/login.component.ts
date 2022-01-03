@@ -20,7 +20,9 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.login(this.loginUser);
-    this.alert.success("Başarılı Giriş")
+    if(this.authService.loggedIn()){
+      this.alert.success("Başarılı Giriş")
+    }
   }
 
   logOut() {

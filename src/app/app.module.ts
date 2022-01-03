@@ -13,6 +13,7 @@ import { AdminComponent } from './main/admin/admin.component';
 import { HomepageComponent } from './main/homepage/homepage.component';
 import { AuthService } from './services/auth.service';
 import { LoginGuardService } from './services/login-guard.service';
+import { AboutUsComponent } from './main/about-us/about-us.component';
 
 const routes: Routes = [
   {
@@ -32,7 +33,7 @@ const routes: Routes = [
   { path: '**', component: HomeComponent },
 ];
 @NgModule({
-  declarations: [AppComponent, NavComponent, HomeComponent, HomepageComponent],
+  declarations: [AppComponent, NavComponent, HomeComponent, HomepageComponent, AboutUsComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
