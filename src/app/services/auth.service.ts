@@ -36,7 +36,11 @@ export class AuthService {
     headers = headers.append('Content-Type', 'application/json');
     this.httpClient
       .post(this.path + 'register', registerUser, { headers: headers })
-      .subscribe((data) => {});
+      .subscribe((data) => {
+        this.router.navigateByUrl('').then(()=>{
+          window.location.reload();
+        });
+      });
   }
   saveToken(token) {
     localStorage.setItem(this.TOKEN_KEY, token);
