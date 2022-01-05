@@ -34,7 +34,7 @@ export class PanelUserComponent implements OnInit {
   });
 
   deleteUser(id) {
-    if (confirm('Eşyayı silmek istediğinize emin misiniz?') == true) {
+    if (confirm('Kullanıcıyı silmek istediğinize emin misiniz?') == true) {
       this.userService.deleteUser(id);
       setTimeout(() => {
         window.location.reload();
