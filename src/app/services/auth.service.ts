@@ -38,7 +38,7 @@ export class AuthService {
     this.httpClient
       .post(this.path + 'register', registerUser, { headers: headers })
       .subscribe((data) => {
-        
+        console.log(data);
         this.router.navigateByUrl('').then(()=>{
           window.location.reload();
           this.alert.success("kayıt işlemi başarılı.")
