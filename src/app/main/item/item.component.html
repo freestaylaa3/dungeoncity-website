@@ -26,10 +26,16 @@
       <div [@flyInOut]="'down'" class="card mb-3 shadow-lg" style="max-width: 540px">
         <div class="row g-0">
           <div *ngIf="item.itemType.itemTypeName == 'Hand' " class="col-md-4">
-            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fsimilarpng.com%2Fsword-isolated-on-transparent-background-png%2F&psig=AOvVaw06eTEtjG96F4ZUJTP5svHC&ust=1640560132908000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJDfnPSIgPUCFQAAAAAdAAAAABAD" class="img-fluid rounded-start" alt="..." />
+            <img src="https://www.pngall.com/wp-content/uploads/2016/03/Sword-PNG-File.png" class="img-fluid rounded-start" alt="..." />
           </div>
-          <div class="col-md-4">
-            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fsimilarpng.com%2Fsword-isolated-on-transparent-background-png%2F&psig=AOvVaw06eTEtjG96F4ZUJTP5svHC&ust=1640560132908000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJDfnPSIgPUCFQAAAAAdAAAAABAD" class="img-fluid rounded-start" alt="..." />
+          <div *ngIf="item.itemType.itemTypeName == 'Head' " class="col-md-4">
+            <img src="https://i.pinimg.com/originals/a6/41/41/a64141b773549c4ccd275ad4b78b1d06.png" class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div *ngIf="item.itemType.itemTypeName == 'Body' " class="col-md-4">
+            <img src="http://assets.stickpng.com/images/5904f274bbee4f0964d878fa.png" class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div *ngIf="item.itemType.itemTypeName == 'Feet' " class="col-md-4">
+            <img src="https://i.pinimg.com/originals/78/51/c7/7851c7d1d154499637aeb6d317affedc.png" class="img-fluid rounded-start" alt="..." />
           </div>
           <div class="col-md-8">
             <div class="card-body">
