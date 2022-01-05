@@ -11,7 +11,7 @@
     </button>
   </li>
   <li class="nav-item">
-    <input type="text" id="myInput" onkeyup="search()" placeholder="Search for names..">
+    <input type="text" class="form-control" id="myInput" onkeyup="search()" placeholder="Eşya ara...">
   </li>
 </ul>
 <table id="itemTable" class="mt-1 table table-striped table-dark">
@@ -217,7 +217,7 @@
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
+    table = document.getElementById("itemTable");
     tr = table.getElementsByTagName("tr");
   
     // Loop through all table rows, and hide those who don't match the search query
