@@ -25,6 +25,9 @@
     <div *ngFor="let item of items" class="col-md-6">
       <div [@flyInOut]="'down'" class="card mb-3 shadow-lg" style="max-width: 540px">
         <div class="row g-0">
+          <div *ngIf="item.itemType.itemTypeName == 'Hand' " class="col-md-4">
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fsimilarpng.com%2Fsword-isolated-on-transparent-background-png%2F&psig=AOvVaw06eTEtjG96F4ZUJTP5svHC&ust=1640560132908000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJDfnPSIgPUCFQAAAAAdAAAAABAD" class="img-fluid rounded-start" alt="..." />
+          </div>
           <div class="col-md-4">
             <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fsimilarpng.com%2Fsword-isolated-on-transparent-background-png%2F&psig=AOvVaw06eTEtjG96F4ZUJTP5svHC&ust=1640560132908000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJDfnPSIgPUCFQAAAAAdAAAAABAD" class="img-fluid rounded-start" alt="..." />
           </div>
@@ -50,6 +53,36 @@
         </div>
       </div>
     </div>
+    <!--  -->
+    <div class="col-md-6">
+      <div [@flyInOut]="'down'" class="card mb-3 shadow-lg" style="max-width: 540px">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="http://assets.stickpng.com/thumbs/5a8dd4b7b15d5c051b368ffa.png" class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"> <strong>Dombili Asası</strong></h5>
+              <p class="card-text">
+                <small class="text-muted">Hand</small>
+              </p>
+              <p class="card-text">Tutması biraz zor olsa gerek..</p>
+              <div class="row">
+                <div class="col" >
+                  <strong style="color: black">Fiziksel Hasar:</strong>
+                  42
+                </div>
+                <div class="col" >
+                  <strong style="color: black">Büyü Hasarı:</strong>
+                  23
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
   </div>
   
 </div>
