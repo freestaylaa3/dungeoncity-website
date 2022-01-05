@@ -60,7 +60,7 @@ export class PanelItemComponent implements OnInit {
   }
 
   addItem() {
-    if(confirm("Eşyayı eklemek istediğinize emin misiniz?")==true){
+    if (confirm('Eşyayı eklemek istediğinize emin misiniz?') == true) {
       this.item = this.addItemForm.value;
       console.log(this.item);
       setTimeout(() => {
@@ -71,8 +71,7 @@ export class PanelItemComponent implements OnInit {
   }
 
   deleteItem(id: number) {
-    if(confirm("Eşyayı silmek istediğinize emin misiniz?")==true){
-      
+    if (confirm('Eşyayı silmek istediğinize emin misiniz?') == true) {
       this.itemService.getItemById(id).subscribe((data) => {
         this.itemService.deleteItem(data);
       });
@@ -80,7 +79,6 @@ export class PanelItemComponent implements OnInit {
         window.location.reload();
       }, 500);
     }
-
   }
 
   loadEditItem(id: number) {
@@ -94,19 +92,17 @@ export class PanelItemComponent implements OnInit {
         itemTypeId: data.itemTypeId,
         baseMagical: data.baseMagical,
         basePhysical: data.basePhysical,
-        itemType : this.type
+        itemType: this.type,
       });
 
       console.log(this.editItemForm.value);
     });
   }
 
- 
-
   editItem(id) {
-    if(confirm("Değişiklikleri kabul ediyor musunuz?")==true){
+    if (confirm('Değişiklikleri kabul ediyor musunuz?') == true) {
       this.itemService.getItemById(id).subscribe((data) => {
-        data = this.editItemForm.value
+        data = this.editItemForm.value;
         this.itemService.editItem(data);
       });
       setTimeout(() => {
