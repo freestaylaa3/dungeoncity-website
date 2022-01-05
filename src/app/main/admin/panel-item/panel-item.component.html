@@ -11,7 +11,7 @@
     </button>
   </li>
   <li class="nav-item">
-    <input type="text" class="form-control" id="myInput" onkeyup="search()" placeholder="Eşya ara...">
+    <input type="text" style="max-width: 4cm;" class="form-control" id="myInput" onkeyup="search()" placeholder="Eşya ara...">
   </li>
 </ul>
 <table id="itemTable" class="mt-1 table table-striped table-dark">
@@ -222,7 +222,7 @@
   
     // Loop through all table rows, and hide those who don't match the search query
     for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("th")[0];
+      td = tr[i].getElementsByTagName("td")[0];
       if (td) {
         txtValue = td.textContent || td.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
