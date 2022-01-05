@@ -14,6 +14,7 @@ import { HomepageComponent } from './main/homepage/homepage.component';
 import { AuthService } from './services/auth.service';
 import { LoginGuardService } from './services/login-guard.service';
 import { AboutUsComponent } from './main/about-us/about-us.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 const routes: Routes = [
   {
@@ -40,7 +41,8 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    Ng2SearchPipeModule
   ],
   providers: [AlertifyService,AuthService,LoginGuardService],
   bootstrap: [AppComponent],

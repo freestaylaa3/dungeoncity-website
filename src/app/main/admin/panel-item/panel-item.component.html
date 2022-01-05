@@ -12,7 +12,7 @@
   </li>
   <li class="nav-item">
     <div class="col-5">
-      <input type="text" style="max-width: 4cm;" class="form-control" id="myInput" onkeyup="search()" placeholder="Eşya ara...">
+      <input type="text" style="max-width: 4cm;" class="form-control" id="myInput" [(ngModel)]="searchText" onkeyup="search()" placeholder="Eşya ara...">
     </div>
   </li>
 </ul>
@@ -28,7 +28,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of items" [attr.id]="item.itemId">
+    <tr *ngFor="let item of items | filter:searchText" [attr.id]="item.itemId">
       <th scope="row">{{ item.itemId }}</th>
       <td>{{ item.itemName }}</td>
       <td>{{ item.itemType.itemTypeName }}</td>

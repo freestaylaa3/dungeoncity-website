@@ -11,6 +11,7 @@ import { ItemType } from 'src/app/models/itemType';
 export class PanelItemComponent implements OnInit {
   constructor(private itemService: ItemService, private fb: FormBuilder) {}
 
+  searchText;
   type: ItemType = {
     itemTypeId: 0,
     itemTypeName: 'string',
