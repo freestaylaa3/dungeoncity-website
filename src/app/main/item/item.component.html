@@ -25,16 +25,16 @@
     <div *ngFor="let item of items" class="col-md-6">
       <div [@flyInOut]="'down'" class="card mb-3 shadow-lg" style="max-width: 540px">
         <div class="row g-0">
-          <div *ngIf="item.itemType.itemTypeName == 'Hand' " class="col-md-4 m-1 p-1">
+          <div *ngIf="item.itemType.itemTypeName == 'Hand' " class="col-md-4 p-3">
             <img src="https://www.pngall.com/wp-content/uploads/2016/03/Sword-PNG-File.png" class="img-fluid rounded-start" alt="..." />
           </div>
-          <div *ngIf="item.itemType.itemTypeName == 'Head' " class="col-md-4 m-1 p-1">
+          <div *ngIf="item.itemType.itemTypeName == 'Head' " class="col-md-4 p-3">
             <img src="https://i.pinimg.com/originals/a6/41/41/a64141b773549c4ccd275ad4b78b1d06.png" class="img-fluid rounded-start" alt="..." />
           </div>
-          <div *ngIf="item.itemType.itemTypeName == 'Body' " class="col-md-4 m-1 p-1">
+          <div *ngIf="item.itemType.itemTypeName == 'Body' " class="col-md-4 p-3">
             <img src="http://assets.stickpng.com/images/5904f274bbee4f0964d878fa.png" class="img-fluid rounded-start" alt="..." />
           </div>
-          <div *ngIf="item.itemType.itemTypeName == 'Feet' " class="col-md-4 m-1 p-1">
+          <div *ngIf="item.itemType.itemTypeName == 'Feet' " class="col-md-4 p-3">
             <img src="https://i.pinimg.com/originals/78/51/c7/7851c7d1d154499637aeb6d317affedc.png" class="img-fluid rounded-start" alt="..." />
           </div>
           <div class="col-md-8">
