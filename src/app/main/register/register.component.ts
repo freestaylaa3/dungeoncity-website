@@ -56,7 +56,6 @@ export class RegisterComponent implements OnInit {
     } else {
       this.registerUser = this.registerForm.value;
       this.authService.register(this.registerUser);
-      
     }
   }
 
