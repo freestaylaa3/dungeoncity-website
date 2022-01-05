@@ -11,7 +11,7 @@
     </button>
   </li>
   <li class="nav-item">
-    <a class="btn btn-dark shadow-lg">Item İşlemleri</a>
+    <input type="text" id="myInput" onkeyup="search()" placeholder="Search for names..">
   </li>
 </ul>
 <table id="itemTable" class="mt-1 table table-striped table-dark">
@@ -36,8 +36,8 @@
         <button 
         data-bs-toggle="modal"
         data-bs-target="#editItemModal" 
-        (mouseover)="loadEditItem(item.itemId)" style="margin-right: 3%" class="btn btn-warning">Edit</button>
-        <button (click)="deleteItem(item.itemId)" class="btn btn-danger">Delete</button>
+        (mouseover)="loadEditItem(item.itemId)" style="margin-right: 3%" class="btn btn-warning">Güncelle</button>
+        <button (click)="deleteItem(item.itemId)" class="btn btn-danger">Sil</button>
       </td>
     </tr>
   </tbody>
@@ -140,7 +140,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel">Eşya Ekleme</h5>
+        <h5 class="modal-title" id="exampleModalToggleLabel">Eşya Güncelleme</h5>
         <button
           type="button"
           class="btn-close"
@@ -203,7 +203,7 @@
                 >
                 <input type="text" class="form-control" id="baseMagical" formControlName="baseMagical"/>
               </div>
-              <button data-bs-dismiss="modal" (click)="editItem(itemId.value)" type="submit" [disabled]='!editItemForm.valid' class="btn btn-success editRefresh">Eşya Ekle</button>
+              <button data-bs-dismiss="modal" (click)="editItem(itemId.value)" type="submit" [disabled]='!editItemForm.valid' class="btn btn-success editRefresh">Eşyayı Güncelle</button>
             </form>
           </div>
       </div>
@@ -211,3 +211,26 @@
   </div>
 </div>
 
+<script>
+  function search() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+  
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("th")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+  </script>
