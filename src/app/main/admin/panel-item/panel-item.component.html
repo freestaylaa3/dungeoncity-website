@@ -75,7 +75,15 @@
                   <label for="itemTypeId" class="form-label" name="itemTypeId"
                     >Eşya Tipi</label
                   >
-                  <input type="text" class="form-control" id="itemTypeId" formControlName="itemTypeId"/>
+                  <select class="form-select form-control" aria-label="Eşya Tipi Seçiniz" id="itemTypeId" formControlName="itemTypeId">
+                    <option selected>Open this select menu</option>
+                    <option value="4">Hand</option>
+                    <option value="5">Body</option>
+                    <option value="6">Head</option>
+                    <option value="7">Feet</option>
+                  </select>
+
+                  <!-- <input type="text" class="form-control" id="itemTypeId" formControlName="itemTypeId"/> -->
                 </div>
               </div>
               <div class="mb-3">
